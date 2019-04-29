@@ -18,6 +18,7 @@ class ComposerStaticInit09da22c81243722276785838cb9086b9
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'SitePoint\\' => 10,
         ),
         'M' => 
         array (
@@ -37,6 +38,10 @@ class ComposerStaticInit09da22c81243722276785838cb9086b9
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'SitePoint\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Medoo\\' => 
         array (

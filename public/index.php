@@ -5,6 +5,14 @@ $database = new Medoo\Medoo ([
     'database_type' => 'sqlite',
     'database_file' => '../storage/database.db'
 ]);
+
+$comment = new SitePoint\Comment($database);
+$comment->setEmail('bruno@skvorxc.me')
+    ->setName('Bruno Skvorc')
+    ->setComment('It works!')
+    ->setComment('Hooray! Saving comments works!')
+    ->save();
+dump($database->error());
 ?>
 
 <!doctype html>
