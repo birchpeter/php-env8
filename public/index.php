@@ -1,16 +1,28 @@
 <?php
 require_once '../vendor/autoload.php';
 
+/*
 $database = new Medoo\Medoo ([
     'database_type' => 'sqlite',
-    'database_file' => '../storage/database.db'
+    'database_file' => '../storage/database.local.db'
+]);
+*/
+
+$file = '../storage/database.local.db';
+if(is_writeable('..storage/database.local.db')) {
+    $file = '../storage/database.local.db';
+}else{ echo "Øv, det virker ikke alligevel!";}
+$database = new Medoo\Medoo ([
+    'database_type' => 'sqlite',
+    'database_file' => $file
 ]);
 
+dump($database);
+
 $comment = new SitePoint\Comment($database);
-$comment->setEmail('bruno@skvorxc.me')
+$comment->setEmail('bruno@skvorc.me')
     ->setName('Bruno Skvorc')
-    ->setComment('It works!')
-    ->setComment('Hooray! Saving comments works!')
+    ->setComment('Hooray! Det duer bare!')
     ->save();
 dump($database->error());
 ?>
